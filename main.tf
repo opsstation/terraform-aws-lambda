@@ -1,14 +1,20 @@
 ##-----------------------------------------------------------------------------
-## Labels module callled that will be used for naming and tags.
+#Module      : Labels
+#Description : Terraform module to create consistent naming for multiple names.
 ##-----------------------------------------------------------------------------
+
 module "labels" {
-  source      = "git::https://github.com/opsstation/terraform-aws-labels.git?ref=v1.0.0"
+  source      = "opsstation/labels/multicloud"
+  version     = "1.0.0"
   name        = var.name
   repository  = var.repository
   environment = var.environment
   managedby   = var.managedby
-  attributes  = var.attributes
   label_order = var.label_order
+  extra_tags = {
+    Owner      = "Sohan"
+    CostCenter = "Finance"
+  }
 }
 
 ##-----------------------------------------------------------------------------
