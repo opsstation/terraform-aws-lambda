@@ -138,3 +138,5 @@ module "lambda" {
 | **AWS** | TitleCase | Any              | `Name`, `Environment`, `CostCenter` |
 
 ---
+### 💙 Maintained by [OpsStation](https://www.opsstation.com)
+> OpsStation — Simplifying Cloud, Securing Scale.
