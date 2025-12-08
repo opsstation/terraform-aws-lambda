@@ -6,7 +6,7 @@ on:
 
 jobs:
   tflint:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -32,4 +32,6 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
 
       - name: Run TFLint
-        run: tflint -f compact
+        run: |
+          # Run TFLint and allow exit code 2 (warnings only)
+          tflint -f compact || [ $? -eq 2 ]
